@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from srmnotesadda.in/function-and-constructor-overloading/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 10:37:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="../xmlrpc.php">
+<title>Function and Constructor Overloading &#8211; SRMnotesADDA</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='http://jetpack.wordpress.com/' />
+<link rel='dns-prefetch' href='http://s0.wp.com/' />
+<link rel='dns-prefetch' href='http://public-api.wordpress.com/' />
+<link rel='dns-prefetch' href='http://0.gravatar.com/' />
+<link rel='dns-prefetch' href='http://1.gravatar.com/' />
+<link rel='dns-prefetch' href='http://2.gravatar.com/' />
+<link rel='dns-prefetch' href='http://c0.wp.com/' />
+<link rel="alternate" type="application/rss+xml" title="SRMnotesADDA &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="SRMnotesADDA &raquo; Comments Feed" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="SRMnotesADDA &raquo; Function and Constructor Overloading Comments Feed" href="feed/index.html" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/srmnotesadda.in\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='../../c0.wp.com/c/6.1.1/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='mediaelement-css' href='../../c0.wp.com/c/6.1.1/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css' href='../../c0.wp.com/c/6.1.1/wp-includes/js/mediaelement/wp-mediaelement.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='../../c0.wp.com/c/6.1.1/wp-includes/css/classic-themes.min.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--neve-link-color: var(--nv-primary-accent);--wp--preset--color--neve-link-hover-color: var(--nv-secondary-accent);--wp--preset--color--nv-site-bg: var(--nv-site-bg);--wp--preset--color--nv-light-bg: var(--nv-light-bg);--wp--preset--color--nv-dark-bg: var(--nv-dark-bg);--wp--preset--color--neve-text-color: var(--nv-text-color);--wp--preset--color--nv-text-dark-bg: var(--nv-text-dark-bg);--wp--preset--color--nv-c-1: var(--nv-c-1);--wp--preset--color--nv-c-2: var(--nv-c-2);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='adfoxly-adfoxly-public-css' href='../wp-content/plugins/adfoxly/public/css/adfoxly-publicdbe8.css?ver=1.7.91' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='../../c0.wp.com/c/6.1.1/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpfront-scroll-top-css' href='../wp-content/plugins/wpfront-scroll-top/css/wpfront-scroll-top.min47ac.css?ver=2.0.7.08086' type='text/css' media='all' />
+<link rel='stylesheet' id='ez-toc-css' href='../wp-content/plugins/easy-table-of-contents/assets/css/screen.min6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<style id='ez-toc-inline-css' type='text/css'>
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}div#ez-toc-container nav ul ul li ul li {font-size: %!important;}
+.ez-toc-container-direction {
+    direction: ltr;
+}
+
+	.ez-toc-counter ul {
+	    counter-reset: item;
+	}
+
+
+	
+	.ez-toc-counter nav ul li a::before {
+	    content: counters(item, ".", decimal) ". ";
+	    display: inline-block;
+	    counter-increment: item;
+        flex-grow: 0;
+        flex-shrink: 0;
+	    margin-right: .2em; 
+
+	    float: left;
+	}
+
+
+.ez-toc-widget-direction {
+    direction: ltr;
+}
+
+	.ez-toc-widget-container ul {
+	    counter-reset: item;
+	}
+
+
+	
+	.ez-toc-widget-container nav ul li a::before {
+	    content: counters(item, ".", decimal) ". ";
+	    display: inline-block;
+	    counter-increment: item;
+        flex-grow: 0;
+        flex-shrink: 0;
+	    margin-right: .2em; 
+
+	    float: left;
+	}
+
+
+</style>
+<link rel='stylesheet' id='neve-style-css' href='../wp-content/themes/neve/assets/css/style-legacy.minedb1.css?ver=3.4.4' type='text/css' media='all' />
+<style id='neve-style-inline-css' type='text/css'>
+.header-menu-sidebar-inner li.menu-item-nav-search { display: none; }
+		[data-row-id] .row { display: flex !important; align-items: center; flex-wrap: unset;}
+		@media (max-width: 960px) { .footer--row .row { flex-direction: column; } }
+.nv-meta-list li.meta:not(:last-child):after { content:"/" }.nv-meta-list .no-mobile{
+			display:none;
+		}.nv-meta-list li.last::after{
+			content: ""!important;
+		}@media (min-width: 769px) {
+			.nv-meta-list .no-mobile {
+				display: inline-block;
+			}
+			.nv-meta-list li.last:not(:last-child)::after {
+		 		content: "/" !important;
+			}
+		}
+ .container{ max-width: 987px; } .has-neve-button-color-color{ color: var(--nv-primary-accent)!important; } .has-neve-button-color-background-color{ background-color: var(--nv-primary-accent)!important; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:957px } .button.button-primary, button, input[type=button], .btn, input[type="submit"], /* Buttons in navigation */ ul[id^="nv-primary-navigation"] li.button.button-primary > a, .menu li.button.button-primary > a, .wp-block-button.is-style-primary .wp-block-button__link, .wc-block-grid .wp-block-button .wp-block-button__link, form input[type="submit"], form button[type="submit"]{ background-color: var(--nv-primary-accent);color: #ffffff;border-radius:3px 3px 3px 3px;border:none;border-width:1px 1px 1px 1px; } .button.button-primary:hover, ul[id^="nv-primary-navigation"] li.button.button-primary > a:hover, .menu li.button.button-primary > a:hover, .wp-block-button.is-style-primary .wp-block-button__link:hover, .wc-block-grid .wp-block-button .wp-block-button__link:hover, form input[type="submit"]:hover, form button[type="submit"]:hover{ background-color: var(--nv-primary-accent);color: #ffffff; } .button.button-secondary:not(.secondary-default), .wp-block-button.is-style-secondary .wp-block-button__link{ background-color: var(--nv-primary-accent);color: #ffffff;border-radius:3px 3px 3px 3px;border:none;border-width:1px 1px 1px 1px; } .button.button-secondary.secondary-default{ background-color: var(--nv-primary-accent);color: #ffffff;border-radius:3px 3px 3px 3px;border:none;border-width:1px 1px 1px 1px; } .button.button-secondary:not(.secondary-default):hover, .wp-block-button.is-style-secondary .wp-block-button__link:hover{ background-color: var(--nv-primary-accent);color: #ffffff; } .button.button-secondary.secondary-default:hover{ background-color: var(--nv-primary-accent);color: #ffffff; } form input:read-write, form textarea, form select, form select option, form.wp-block-search input.wp-block-search__input, .widget select{ color: var(--nv-text-color); } form.search-form input:read-write{ padding-right:45px !important; } .global-styled{ --bgcolor: var(--nv-site-bg); } .header-top-inner,.header-top-inner a:not(.button),.header-top-inner .navbar-toggle{ color: var(--nv-text-color); } .header-top-inner .nv-icon svg,.header-top-inner .nv-contact-list svg{ fill: var(--nv-text-color); } .header-top-inner .icon-bar{ background-color: var(--nv-text-color); } .hfg_header .header-top-inner .nav-ul .sub-menu{ background-color: var(--nv-site-bg); } .hfg_header .header-top-inner{ background-color: var(--nv-site-bg); } .header-bottom-inner,.header-bottom-inner a:not(.button),.header-bottom-inner .navbar-toggle{ color: var(--nv-text-color); } .header-bottom-inner .nv-icon svg,.header-bottom-inner .nv-contact-list svg{ fill: var(--nv-text-color); } .header-bottom-inner .icon-bar{ background-color: var(--nv-text-color); } .hfg_header .header-bottom-inner .nav-ul .sub-menu{ background-color: var(--nv-site-bg); } .hfg_header .header-bottom-inner{ background-color: var(--nv-site-bg); } .header-menu-sidebar .header-menu-sidebar-bg,.header-menu-sidebar .header-menu-sidebar-bg a:not(.button),.header-menu-sidebar .header-menu-sidebar-bg .navbar-toggle{ color: var(--nv-text-color); } .header-menu-sidebar .header-menu-sidebar-bg .nv-icon svg,.header-menu-sidebar .header-menu-sidebar-bg .nv-contact-list svg{ fill: var(--nv-text-color); } .header-menu-sidebar .header-menu-sidebar-bg .icon-bar{ background-color: var(--nv-text-color); } .hfg_header .header-menu-sidebar .header-menu-sidebar-bg .nav-ul .sub-menu{ background-color: var(--nv-site-bg); } .hfg_header .header-menu-sidebar .header-menu-sidebar-bg{ background-color: var(--nv-site-bg); } .header-menu-sidebar{ width: 360px; } .builder-item--logo .site-logo img{ max-width: 120px; } .builder-item--logo .site-logo{ padding:10px 0px 10px 0px; } .builder-item--logo{ margin:0px 0px 0px 0px; } .builder-item--nav-icon .navbar-toggle{ padding:6px 6px 6px 6px; } .builder-item--nav-icon{ margin:0px 0px 0px 0px; } .builder-item--primary-menu .nav-menu-primary > .nav-ul li:not(.woocommerce-mini-cart-item) > a,.builder-item--primary-menu .nav-menu-primary > .nav-ul .has-caret > a,.builder-item--primary-menu .nav-menu-primary > .nav-ul .neve-mm-heading span,.builder-item--primary-menu .nav-menu-primary > .nav-ul .has-caret{ color: #f50000; } .builder-item--primary-menu .nav-menu-primary > .nav-ul li:not(.woocommerce-mini-cart-item) > a:after,.builder-item--primary-menu .nav-menu-primary > .nav-ul li > .has-caret > a:after{ background-color: #ffd6d6; } .builder-item--primary-menu .nav-menu-primary > .nav-ul li.current-menu-item > a,.builder-item--primary-menu .nav-menu-primary > .nav-ul li.current_page_item > a,.builder-item--primary-menu .nav-menu-primary > .nav-ul li.current_page_item > .has-caret > a{ color: #000000; } .builder-item--primary-menu .nav-menu-primary > .nav-ul li.current-menu-item > .has-caret svg{ fill: #000000; } .builder-item--primary-menu .nav-ul > li:not(:last-of-type){ margin-right:20px; } .builder-item--primary-menu .style-full-height .nav-ul li:not(.menu-item-nav-search):not(.menu-item-nav-cart):hover > a:after{ width: calc(100% + 20px); } .builder-item--primary-menu .nav-ul li a, .builder-item--primary-menu .neve-mm-heading span{ min-height: 25px; } .builder-item--primary-menu{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; font-weight: 500; text-transform: none;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--primary-menu svg{ width: 1em;height: 1em; } .builder-item--header_search_responsive a.nv-search.nv-icon > svg{ width: 20px;height: 20px;fill: #000000; } .builder-item--header_search_responsive a.nv-search.nv-icon:hover > svg{ fill: #ff0000; } .builder-item--header_search_responsive input[type=submit],.builder-item--header_search_responsive .nv-search-icon-wrap{ width: 14px; } .builder-item--header_search_responsive .nv-nav-search .search-form input[type=search]{ height: 40px; font-size: 14px;padding-right:50px;border-width:1px 1px 1px 1px;border-radius:1px 1px 1px 1px; } .builder-item--header_search_responsive .nv-search-icon-wrap .nv-icon svg{ width: 14px;height: 14px; } .builder-item--header_search_responsive .close-responsive-search svg{ width: 14px;height: 14px; } .builder-item--header_search_responsive{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .footer-bottom-inner{ background-color: var(--nv-site-bg); } .footer-bottom-inner,.footer-bottom-inner a:not(.button),.footer-bottom-inner .navbar-toggle{ color: #ffffff; } .footer-bottom-inner .nv-icon svg,.footer-bottom-inner .nv-contact-list svg{ fill: #ffffff; } .footer-bottom-inner .icon-bar{ background-color: #ffffff; } .footer-bottom-inner .nav-ul .sub-menu{ background-color: var(--nv-site-bg); } .nav-menu-footer #footer-menu > li > a{ color: #ffffff; } #footer-menu > li > a:after{ background-color: #b6b6b6; } .nav-menu-footer:not(.style-full-height) #footer-menu > li:hover > a{ color: #b6b6b6; } .builder-item--footer-menu .nav-ul > li:not(:last-of-type){ margin-right:20px; } .builder-item--footer-menu .style-full-height .nav-ul#footer-menu > li:hover > a:after{ width: calc(100% + 20px); } .builder-item--footer-menu .nav-ul a{ min-height: 25px; } .builder-item--footer-menu li > a{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; font-weight: 500; text-transform: none; } .builder-item--footer-menu li > a svg{ width: 1em;height: 1em; } .builder-item--footer-menu{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } @media(min-width: 576px){ .container{ max-width: 992px; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:962px } .header-menu-sidebar{ width: 360px; } .builder-item--logo .site-logo img{ max-width: 120px; } .builder-item--logo .site-logo{ padding:10px 0px 10px 0px; } .builder-item--logo{ margin:0px 0px 0px 0px; } .builder-item--nav-icon .navbar-toggle{ padding:10px 15px 10px 15px; } .builder-item--nav-icon{ margin:0px 0px 0px 0px; } .builder-item--primary-menu .nav-ul > li:not(:last-of-type){ margin-right:20px; } .builder-item--primary-menu .style-full-height .nav-ul li:not(.menu-item-nav-search):not(.menu-item-nav-cart):hover > a:after{ width: calc(100% + 20px); } .builder-item--primary-menu .nav-ul li a, .builder-item--primary-menu .neve-mm-heading span{ min-height: 25px; } .builder-item--primary-menu{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--primary-menu svg{ width: 1em;height: 1em; } .builder-item--header_search_responsive input[type=submit],.builder-item--header_search_responsive .nv-search-icon-wrap{ width: 14px; } .builder-item--header_search_responsive .nv-nav-search .search-form input[type=search]{ height: 40px; font-size: 14px;padding-right:50px;border-width:1px 1px 1px 1px;border-radius:1px 1px 1px 1px; } .builder-item--header_search_responsive .nv-search-icon-wrap .nv-icon svg{ width: 14px;height: 14px; } .builder-item--header_search_responsive .close-responsive-search svg{ width: 14px;height: 14px; } .builder-item--header_search_responsive{ padding:0px 10px 0px 10px;margin:0px 0px 0px 0px; } .builder-item--footer-menu .nav-ul > li:not(:last-of-type){ margin-right:20px; } .builder-item--footer-menu .style-full-height .nav-ul#footer-menu > li:hover > a:after{ width: calc(100% + 20px); } .builder-item--footer-menu .nav-ul a{ min-height: 25px; } .builder-item--footer-menu li > a{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; } .builder-item--footer-menu li > a svg{ width: 1em;height: 1em; } .builder-item--footer-menu{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } }@media(min-width: 960px){ .container{ max-width: 1170px; } body:not(.single):not(.archive):not(.blog):not(.search):not(.error404) .neve-main > .container .col, body.post-type-archive-course .neve-main > .container .col, body.post-type-archive-llms_membership .neve-main > .container .col{ max-width: 70%; } body:not(.single):not(.archive):not(.blog):not(.search):not(.error404) .nv-sidebar-wrap, body.post-type-archive-course .nv-sidebar-wrap, body.post-type-archive-llms_membership .nv-sidebar-wrap{ max-width: 30%; } .neve-main > .archive-container .nv-index-posts.col{ max-width: 70%; } .neve-main > .archive-container .nv-sidebar-wrap{ max-width: 30%; } .neve-main > .single-post-container .nv-single-post-wrap.col{ max-width: 70%; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:789px } .container-fluid.single-post-container .alignfull > [class*="__inner-container"], .container-fluid.single-post-container .alignwide > [class*="__inner-container"]{ max-width:calc(70% + 15px) } .neve-main > .single-post-container .nv-sidebar-wrap{ max-width: 30%; } .header-menu-sidebar{ width: 360px; } .builder-item--logo .site-logo img{ max-width: 279px; } .builder-item--logo .site-logo{ padding:0px 0px 0px 0px; } .builder-item--logo{ margin:0px 0px 0px 0px; } .builder-item--nav-icon .navbar-toggle{ padding:10px 15px 10px 15px; } .builder-item--nav-icon{ margin:0px 0px 0px 0px; } .builder-item--primary-menu .nav-ul > li:not(:last-of-type){ margin-right:33px; } .builder-item--primary-menu .style-full-height .nav-ul li:not(.menu-item-nav-search):not(.menu-item-nav-cart) > a:after{ left:-16.5px;right:-16.5px } .builder-item--primary-menu .style-full-height .nav-ul li:not(.menu-item-nav-search):not(.menu-item-nav-cart):hover > a:after{ width: calc(100% + 33px); } .builder-item--primary-menu .nav-ul li a, .builder-item--primary-menu .neve-mm-heading span{ min-height: 19px; } .builder-item--primary-menu{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--primary-menu svg{ width: 1em;height: 1em; } .builder-item--header_search_responsive input[type=submit],.builder-item--header_search_responsive .nv-search-icon-wrap{ width: 14px; } .builder-item--header_search_responsive .nv-nav-search .search-form input[type=search]{ height: 40px; font-size: 14px;padding-right:50px;border-width:1px 1px 1px 1px;border-radius:1px 1px 1px 1px; } .builder-item--header_search_responsive .nv-search-icon-wrap .nv-icon svg{ width: 14px;height: 14px; } .builder-item--header_search_responsive .close-responsive-search svg{ width: 14px;height: 14px; } .builder-item--header_search_responsive{ padding:0px 10px 0px 10px;margin:0px 0px 0px 0px; } .builder-item--footer-menu .nav-ul > li:not(:last-of-type){ margin-right:14px; } .builder-item--footer-menu .style-full-height .nav-ul#footer-menu > li > a:after{ left:-7px;right:-7px } .builder-item--footer-menu .style-full-height .nav-ul#footer-menu > li:hover > a:after{ width: calc(100% + 14px); } .builder-item--footer-menu .nav-ul a{ min-height: 25px; } .builder-item--footer-menu li > a{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; } .builder-item--footer-menu li > a svg{ width: 1em;height: 1em; } .builder-item--footer-menu{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } }.nv-content-wrap .elementor a:not(.button):not(.wp-block-file__button){ text-decoration: none; }:root{--nv-primary-accent:#0077ff;--nv-secondary-accent:#0e509a;--nv-site-bg:#ffffff;--nv-light-bg:#ededed;--nv-dark-bg:#14171c;--nv-text-color:#393939;--nv-text-dark-bg:#ffffff;--nv-c-1:#77b978;--nv-c-2:#f37262;--nv-fallback-ff:Arial, Helvetica, sans-serif;}
+:root{--e-global-color-nvprimaryaccent:#0077ff;--e-global-color-nvsecondaryaccent:#0e509a;--e-global-color-nvsitebg:#ffffff;--e-global-color-nvlightbg:#ededed;--e-global-color-nvdarkbg:#14171c;--e-global-color-nvtextcolor:#393939;--e-global-color-nvtextdarkbg:#ffffff;--e-global-color-nvc1:#77b978;--e-global-color-nvc2:#f37262;}
+</style>
+<link rel='stylesheet' id='elementor-icons-css' href='../wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min91ce.css?ver=5.16.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-legacy-css' href='../wp-content/plugins/elementor/assets/css/frontend-legacy.min9e95.css?ver=3.8.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='../wp-content/plugins/elementor/assets/css/frontend.min9e95.css?ver=3.8.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-8-css' href='../wp-content/uploads/elementor/css/post-84dfb.css?ver=1646474533' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-global-css' href='../wp-content/uploads/elementor/css/global4dfb.css?ver=1646474533' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-661-css' href='../wp-content/uploads/elementor/css/post-661a134.css?ver=1646475844' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css' href='../../c0.wp.com/p/jetpack/11.5.1/css/jetpack.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../c0.wp.com/c/6.1.1/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='../../c0.wp.com/c/6.1.1/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/adfoxly/public/js/adfoxly-publicdbe8.js?ver=1.7.91' id='adfoxly-public-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/adfoxly/public/js/adfoxly-public-ajaxdbe8.js?ver=1.7.91' id='adfoxly+ajax-js'></script>
+<link rel="https://api.w.org/" href="../wp-json/index.html" /><link rel="alternate" type="application/json" href="../wp-json/wp/v2/posts/661.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='../indexd4f5.html?p=661' />
+<link rel="alternate" type="application/json+oembed" href="../wp-json/oembed/1.0/embed7a2b.json?url=https%3A%2F%2Fsrmnotesadda.in%2Ffunction-and-constructor-overloading%2F" />
+<link rel="alternate" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed91e7?url=https%3A%2F%2Fsrmnotesadda.in%2Ffunction-and-constructor-overloading%2F&amp;format=xml" />
+<script type="text/javascript">
+           var adfoxlyAjax = {"ajax_url":"\/wp-admin\/admin-ajax.php"};
+         </script><script type="application/ld+json">[]</script><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebSite","name":"SRMnotesADDA","url":"https:\/\/srmnotesadda.in","potentialAction":[{"@type":"SearchAction","target":"https:\/\/srmnotesadda.in\/?s={search_term_string}","query-input":"required name=search_term_string"}]}</script><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/srmnotesadda.in\/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/srmnotesadda.in\/function-and-constructor-overloading\/","name":"Function and Constructor Overloading"}}]}</script> <style>img#wpstats{display:none}</style>
+<script>
+			document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+		</script>
+<style>
+			.no-js img.lazyload { display: none; }
+			figure.wp-block-image img.lazyloading { min-width: 150px; }
+							.lazyload, .lazyloading { opacity: 0; }
+				.lazyloaded {
+					opacity: 1;
+					transition: opacity 400ms;
+					transition-delay: 0ms;
+				}
+					</style>
+<meta name="onesignal" content="wordpress-plugin" />
+<script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.html";
+                      OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.html";
+                      OneSignal.SERVICE_WORKER_PARAM = { scope: "/" };
+        OneSignal.setDefaultNotificationUrl("../index.html");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = 'aa3b80ec-161d-4f18-ab60-f77aabc466cb';
+oneSignal_options['allowLocalhostAsSecureOrigin'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "";
+oneSignal_options['welcomeNotification']['message'] = "";
+oneSignal_options['path'] = "../wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/index.html";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.4d68c5e3-f56f-4052-bfb7-4c135295bfe6";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['promptOptions']['siteName'] = "../index.html";
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-left';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'medium';
+oneSignal_options['notifyButton']['showCredit'] = true;
+oneSignal_options['notifyButton']['text'] = {};
+                OneSignal.init(window._oneSignalInitOptions);
+                OneSignal.showSlidedownPrompt();      });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+<style id="wpsp-style-frontend"></style>
+<link rel="icon" href="../wp-content/uploads/2020/09/cropped-srmnotesadda-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="../wp-content/uploads/2020/09/cropped-srmnotesadda-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="../wp-content/uploads/2020/09/cropped-srmnotesadda-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://srmnotesadda.in/wp-content/uploads/2020/09/cropped-srmnotesadda-1-270x270.png" />
+<style type="text/css" id="wp-custom-css">
+			.NR-Ads { position: fixed; bottom: 0px; left: 0; width: 100%; min-height: 70px; max-height: 90px; padding: 5px 5px; box-shadow: 0 -6px 18px 0 rgba(9,32,76,.1); -webkit-transition: all .1s ease-in; transition: all .1s ease-in; display: flex; align-items: center; justify-content: center; background-color: #fefefe; z-index: 20; } 
+ 
+.NR-Ads-close { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; border-radius: 12px 0 0; position: absolute; right: 0; top: -30px; background-color: #fefefe; box-shadow: 0 -6px 18px 0 rgba(9,32,76,.08); } 
+ 
+.NR-Ads .NR-Ads-close svg { width: 22px; height: 22px; fill: #000; } 
+ 
+.NR-Ads .NR-Ads-content { overflow: hidden; display: block; position: relative; height: 70px; width: 100%; margin-right: 10px; margin-left: 10px; }		</style>
+</head>
+<body data-rsssl=1 class="post-template-default single single-post postid-661 single-format-standard wp-custom-logo wp-schema-pro-2.5.2  nv-sidebar-right menu_sidebar_slide_left elementor-default elementor-kit-8 elementor-page elementor-page-661" id="neve_body">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div class="wrapper">
+<header class="header">
+<a class="neve-skip-link show-on-focus" href="#content">
+Skip to content </a>
+<div id="header-grid" class="hfg_header site-header">
+<div class="header--row header-top hide-on-mobile hide-on-tablet layout-full-contained header--row" data-row-id="top" data-show-on="desktop">
+<div class="header--row-inner header-top-inner">
+<div class="container">
+<div class="row row--wrapper" data-section="hfg_header_layout_top">
+<div class="builder-item hfg-item-last hfg-item-first col-8 desktop-left offset-4"><div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo">
+<div class="site-logo">
+<a class="brand" href="../index.html" title="SRMnotesADDA" aria-label="SRMnotesADDA"><div class="title-with-logo"><div class="nv-title-tagline-wrap"></div><img width="1400" height="350" src="../wp-content/uploads/2020/09/cropped-Tag-line.png" class="neve-site-logo skip-lazy" alt="" decoding="async" data-variant="logo" srcset="https://srmnotesadda.in/wp-content/uploads/2020/09/cropped-Tag-line.png 1400w, https://srmnotesadda.in/wp-content/uploads/2020/09/cropped-Tag-line-300x75.png 300w, https://srmnotesadda.in/wp-content/uploads/2020/09/cropped-Tag-line-1024x256.png 1024w, https://srmnotesadda.in/wp-content/uploads/2020/09/cropped-Tag-line-768x192.png 768w" sizes="(max-width: 1400px) 100vw, 1400px" /></div></a></div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+<div class="header--row header-bottom hide-on-mobile hide-on-tablet layout-full-contained header--row" data-row-id="bottom" data-show-on="desktop">
+<div class="header--row-inner header-bottom-inner">
+<div class="container">
+<div class="row row--wrapper" data-section="hfg_header_layout_bottom">
+<div class="builder-item has-nav hfg-item-first col-9 desktop-left"><div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary" data-item-id="primary-menu">
+<div class="nv-nav-wrap">
+<div role="navigation" class="nav-menu-primary style-full-height m-style" aria-label="Primary Menu">
+<ul id="nv-primary-navigation-bottom" class="primary-menu-ul nav-ul menu-"><li id="menu-item-113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-113"><a href="../index.html">HOME</a></li>
+<li id="menu-item-1265" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1265"><a href="../category/1-year-elab-codes/index.html"><span class="menu-item-title-wrap dd-title">1 Year Elab Codes</span><div role="none" tabindex="-1" class="caret-wrap 2" style="margin-left:5px;"><span class="caret"><svg aria-label="Dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></a>
+<ul class="sub-menu">
+<li id="menu-item-1563" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1563"><a href="#"><span class="menu-item-title-wrap dd-title">Level 1</span><div role="none" tabindex="-1" class="caret-wrap 3" style="margin-left:5px;"><span class="caret"><svg aria-label="Dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></a>
+<ul class="sub-menu">
+<li id="menu-item-1269" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1269"><a href="../first-year-elab-level-1-i-2021/index.html">First Year ELAB Level 1 (i) (2021)</a></li>
+<li id="menu-item-1268" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1268"><a href="../first-year-elab-level-1-ii-2021/index.html">First Year Elab Level 1 (ii) (2021)</a></li>
+<li id="menu-item-1482" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1482"><a href="../first-year-elab-level-1-iii-2021/index.html">First Year Elab Level 1 (iii) (2021)</a></li>
+</ul>
+</li>
+<li id="menu-item-1564" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1564"><a href="#"><span class="menu-item-title-wrap dd-title">Level 2</span><div role="none" tabindex="-1" class="caret-wrap 7" style="margin-left:5px;"><span class="caret"><svg aria-label="Dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></a>
+<ul class="sub-menu">
+<li id="menu-item-1267" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1267"><a href="../first-year-elab-level-2-2021/index.html">First Year Elab Level 2 (2021)</a></li>
+<li id="menu-item-1557" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1557"><a href="../first-year-elab-level-2-i-2021/index.html">First Year Elab Level 2 (i) (2021)</a></li>
+<li id="menu-item-1605" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1605"><a href="../first-year-elab-level-2-ii-2021/index.html">First Year Elab Level 2 (ii) (2021)</a></li>
+<li id="menu-item-1612" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1612"><a href="../first-year-elab-level-2-iii-2021/index.html">First Year Elab Level 2 (iii) (2021)</a></li>
+</ul>
+</li>
+<li id="menu-item-1565" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1565"><a href="#"><span class="menu-item-title-wrap dd-title">Level 3</span><div role="none" tabindex="-1" class="caret-wrap 12" style="margin-left:5px;"><span class="caret"><svg aria-label="Dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></a>
+<ul class="sub-menu">
+<li id="menu-item-1266" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1266"><a href="../first-year-elab-level-3-2021/index.html">First Year Elab Level 3 (2021)</a></li>
+</ul>
+</li>
+<li id="menu-item-290" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-290"><a href="../pps-elab/index.html">PPS Elab 1</a></li>
+<li id="menu-item-268" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-268"><a href="../pps-elab-2/index.html">PPS Elab 2</a></li>
+</ul>
+</li>
+<li id="menu-item-1224" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1224"><a href="../2-year-elab-codes/index.html"><span class="menu-item-title-wrap dd-title">2 Year Elab Codes</span><div role="none" tabindex="-1" class="caret-wrap 16" style="margin-left:5px;"><span class="caret"><svg aria-label="Dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></a>
+<ul class="sub-menu">
+<li id="menu-item-1045" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1045"><a href="../data-structures-elab/index.html">DS Elab</a></li>
+<li id="menu-item-1046" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1046"><a href="../srm-elab-oops-codes-2020/index.html">OOPS Elab</a></li>
+</ul>
+</li>
+<li id="menu-item-1786" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1786"><a href="../blogs/index.html">SRM Guide</a></li>
+<li id="menu-item-1913" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1913"><a href="../hackerrank-srm-ccc-all-solutions/index.html">HACKERRANK SRM CCC</a></li>
+<li id="menu-item-1571" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1571"><a href="../became-the-contributor/index.html">Contribute here</a></li>
+</ul> </div>
+</div>
+</div>
+</div><div class="builder-item hfg-item-last col-2 desktop-right offset-1"><div class="item--inner builder-item--header_search_responsive" data-section="header_search_responsive" data-item-id="header_search_responsive">
+<div class="nv-search-icon-component">
+<div class="menu-item-nav-search canvas">
+<a aria-label="Search" href="#" class="nv-icon nv-search">
+<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z" /></svg>
+</a> <div class="nv-nav-search" aria-label="search">
+<div class="form-wrap container responsive-search">
+<form role="search" method="get" class="search-form" action="https://srmnotesadda.in/">
+<label>
+<span class="screen-reader-text">Search for...</span>
+</label>
+<input type="search" class="search-field" aria-label="Search" placeholder="Search for your Question...." value="" name="s" />
+<button type="submit" class="search-submit nv-submit" aria-label="Search">
+<span class="nv-search-icon-wrap">
+<span class="nv-icon nv-search">
+<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z" /></svg>
+</span></span>
+</button>
+</form>
+</div>
+<div class="close-container container responsive-search">
+<button class="close-responsive-search" aria-label="Close">
+<svg width="50" height="50" viewBox="0 0 20 20" fill="#555555"><path d="M14.95 6.46L11.41 10l3.54 3.54l-1.41 1.41L10 11.42l-3.53 3.53l-1.42-1.42L8.58 10L5.05 6.47l1.42-1.42L10 8.58l3.54-3.53z" /></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+<div class="header--row header-top hide-on-desktop layout-full-contained header--row" data-row-id="top" data-show-on="mobile">
+<div class="header--row-inner header-top-inner">
+<div class="container">
+<div class="row row--wrapper" data-section="hfg_header_layout_top">
+<div class="builder-item hfg-item-last hfg-item-first col-12 mobile-center tablet-left"><div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo">
+<div class="site-logo">
+<a class="brand" href="../index.html" title="SRMnotesADDA" aria-label="SRMnotesADDA"><div class="title-with-logo"><div class="nv-title-tagline-wrap"></div><img width="1400" height="350" src="../wp-content/uploads/2020/09/cropped-Tag-line.png" class="neve-site-logo skip-lazy" alt="" decoding="async" data-variant="logo" srcset="https://srmnotesadda.in/wp-content/uploads/2020/09/cropped-Tag-line.png 1400w, https://srmnotesadda.in/wp-content/uploads/2020/09/cropped-Tag-line-300x75.png 300w, https://srmnotesadda.in/wp-content/uploads/2020/09/cropped-Tag-line-1024x256.png 1024w, https://srmnotesadda.in/wp-content/uploads/2020/09/cropped-Tag-line-768x192.png 768w" sizes="(max-width: 1400px) 100vw, 1400px" /></div></a></div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+<div class="header--row header-bottom hide-on-desktop layout-full-contained header--row" data-row-id="bottom" data-show-on="mobile">
+<div class="header--row-inner header-bottom-inner">
+<div class="container">
+<div class="row row--wrapper" data-section="hfg_header_layout_bottom">
+<div class="builder-item hfg-item-first col-4 mobile-left tablet-right"><div class="item--inner builder-item--nav-icon" data-section="header_menu_icon" data-item-id="nav-icon">
+<div class="menu-mobile-toggle item-button navbar-toggle-wrapper">
+<button type="button" class=" navbar-toggle" value="Navigation Menu" aria-label="Navigation Menu ">
+<span class="bars">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</span>
+<span class="screen-reader-text">Navigation Menu</span>
+</button>
+</div> 
+</div>
+</div><div class="builder-item hfg-item-last col-4 tablet-left mobile-right offset-4"><div class="item--inner builder-item--header_search_responsive" data-section="header_search_responsive" data-item-id="header_search_responsive">
+<div class="nv-search-icon-component">
+<div class="menu-item-nav-search canvas">
+<a aria-label="Search" href="#" class="nv-icon nv-search">
+<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z" /></svg>
+</a> <div class="nv-nav-search" aria-label="search">
+<div class="form-wrap container responsive-search">
+<form role="search" method="get" class="search-form" action="https://srmnotesadda.in/">
+<label>
+<span class="screen-reader-text">Search for...</span>
+</label>
+<input type="search" class="search-field" aria-label="Search" placeholder="Search for your Question...." value="" name="s" />
+<button type="submit" class="search-submit nv-submit" aria-label="Search">
+<span class="nv-search-icon-wrap">
+<span class="nv-icon nv-search">
+<svg width="15" height="15" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z" /></svg>
+</span></span>
+</button>
+</form>
+</div>
+<div class="close-container container responsive-search">
+<button class="close-responsive-search" aria-label="Close">
+<svg width="50" height="50" viewBox="0 0 20 20" fill="#555555"><path d="M14.95 6.46L11.41 10l3.54 3.54l-1.41 1.41L10 11.42l-3.53 3.53l-1.42-1.42L8.58 10L5.05 6.47l1.42-1.42L10 8.58l3.54-3.53z" /></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+<div id="header-menu-sidebar" class="header-menu-sidebar menu-sidebar-panel slide_left" data-row-id="sidebar">
+<div id="header-menu-sidebar-bg" class="header-menu-sidebar-bg">
+<div class="close-sidebar-panel navbar-toggle-wrapper">
+<button type="button" class="hamburger is-active  navbar-toggle active" value="Navigation Menu" aria-label="Navigation Menu ">
+<span class="bars">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</span>
+<span class="screen-reader-text">
+Navigation Menu </span>
+</button>
+</div>
+<div id="header-menu-sidebar-inner" class="header-menu-sidebar-inner ">
+<div class="builder-item has-nav hfg-item-last hfg-item-first col-12 mobile-left tablet-left desktop-left"><div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary" data-item-id="primary-menu">
+<div class="nv-nav-wrap">
+<div role="navigation" class="nav-menu-primary style-full-height m-style" aria-label="Primary Menu">
+<ul id="nv-primary-navigation-sidebar" class="primary-menu-ul nav-ul menu-"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-113"><a href="../index.html">HOME</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1265"><a href="../category/1-year-elab-codes/index.html"><span class="menu-item-title-wrap dd-title">1 Year Elab Codes</span><div role="none" tabindex="0" class="caret-wrap 2" style="margin-left:5px;"><span class="caret"><svg aria-label="Dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1563"><a href="#"><span class="menu-item-title-wrap dd-title">Level 1</span><div role="none" tabindex="0" class="caret-wrap 3" style="margin-left:5px;"><span class="caret"><svg aria-label="Dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1269"><a href="../first-year-elab-level-1-i-2021/index.html">First Year ELAB Level 1 (i) (2021)</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1268"><a href="../first-year-elab-level-1-ii-2021/index.html">First Year Elab Level 1 (ii) (2021)</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1482"><a href="../first-year-elab-level-1-iii-2021/index.html">First Year Elab Level 1 (iii) (2021)</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1564"><a href="#"><span class="menu-item-title-wrap dd-title">Level 2</span><div role="none" tabindex="0" class="caret-wrap 7" style="margin-left:5px;"><span class="caret"><svg aria-label="Dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1267"><a href="../first-year-elab-level-2-2021/index.html">First Year Elab Level 2 (2021)</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1557"><a href="../first-year-elab-level-2-i-2021/index.html">First Year Elab Level 2 (i) (2021)</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1605"><a href="../first-year-elab-level-2-ii-2021/index.html">First Year Elab Level 2 (ii) (2021)</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1612"><a href="../first-year-elab-level-2-iii-2021/index.html">First Year Elab Level 2 (iii) (2021)</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1565"><a href="#"><span class="menu-item-title-wrap dd-title">Level 3</span><div role="none" tabindex="0" class="caret-wrap 12" style="margin-left:5px;"><span class="caret"><svg aria-label="Dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1266"><a href="../first-year-elab-level-3-2021/index.html">First Year Elab Level 3 (2021)</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-290"><a href="../pps-elab/index.html">PPS Elab 1</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-268"><a href="../pps-elab-2/index.html">PPS Elab 2</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1224"><a href="../2-year-elab-codes/index.html"><span class="menu-item-title-wrap dd-title">2 Year Elab Codes</span><div role="none" tabindex="0" class="caret-wrap 16" style="margin-left:5px;"><span class="caret"><svg aria-label="Dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" /></svg></span></div></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1045"><a href="../data-structures-elab/index.html">DS Elab</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1046"><a href="../srm-elab-oops-codes-2020/index.html">OOPS Elab</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1786"><a href="../blogs/index.html">SRM Guide</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1913"><a href="../hackerrank-srm-ccc-all-solutions/index.html">HACKERRANK SRM CCC</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1571"><a href="../became-the-contributor/index.html">Contribute here</a></li>
+</ul> </div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="header-menu-sidebar-overlay hfg-ov"></div>
+</div>
+</header>
+<main id="content" class="neve-main">
+<div class="container single-post-container">
+<div class="row">
+<article id="post-661" class="nv-single-post-wrap col post-661 post type-post status-publish format-standard hentry category-coding">
+<div class="entry-header"><div class="nv-title-meta-wrap"><h1 class="title entry-title">Function and Constructor Overloading</h1><ul class="nv-meta-list"></ul></div></div><div class="nv-content-wrap entry-content"> <div data-elementor-type="wp-post" data-elementor-id="661" class="elementor elementor-661">
+<div class="elementor-inner">
+<div class="elementor-section-wrap">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-26231bc elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="26231bc" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-73d6789" data-id="73d6789" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-e06bb96 elementor-widget elementor-widget-text-editor" data-id="e06bb96" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p style="text-align: center;"><strong><a href="https://amzn.to/2TBLqEM">Check out your favourite anime character </a></strong></p><p><a href="https://amzn.to/2TBLqEM"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-768x768.jpg 768w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1323 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-768x768.jpg 768w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1323 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1323 aligncenter" src="../wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-768x768.jpg 768w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></a></p><div class='code-block code-block-1' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="2547113697" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-821d9ea elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="821d9ea" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d55cf86" data-id="d55cf86" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-3a9ed4d elementor-widget elementor-widget-text-editor" data-id="3a9ed4d" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p><span style="color: #000080;">If you are having any problem regarding the output or evaluation in Elab, </span><a href="https://www.onlinegdb.com/online_c++_compiler">Then check your code here.</a></p> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-c0ddee4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c0ddee4" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-dade505" data-id="dade505" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-505e980 elementor-widget elementor-widget-text-editor" data-id="505e980" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<div id="ez-toc-container" class="ez-toc-v2_0_36_1 counter-hierarchy ez-toc-counter ez-toc-grey ez-toc-container-direction">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title">Table of Contents</p>
+<span class="ez-toc-title-toggle"><a href="#" class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle" style="display: none;"><label for="item" aria-label="Table of Content"><span style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;"><svg style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg" class="list-377408" width="20px" height="20px" viewBox="0 0 24 24" fill="none"><path d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z" fill="currentColor"></path></svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013" xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" version="1.2" baseProfile="tiny"><path d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z" /></svg></span></label><input type="checkbox" id="item"></a></span></div>
+<nav><ul class='ez-toc-list ez-toc-list-level-1'><li class='ez-toc-page-1 ez-toc-heading-level-2'><a class="ez-toc-link ez-toc-heading-1" href="#Table_of_content" title="Table of content">Table of content</a><ul class='ez-toc-list-level-3'><li class='ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-2" href="#Limka_Book_of_Records" title="Limka Book of Records">Limka Book of Records</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-3" href="#Saravana_Stores" title="Saravana Stores">Saravana Stores</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-4" href="#Smart_Appraisal_System" title="Smart Appraisal System">Smart Appraisal System</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-5" href="#Profit_of_the_Day" title="Profit of the Day">Profit of the Day</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-6" href="#BCD_Game" title="BCD Game">BCD Game</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-7" href="#Database_Administrator" title="Database Administrator">Database Administrator</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-8" href="#Business_Man" title="Business Man">Business Man</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-9" href="#Olympic_Gold_for_India" title="Olympic Gold for India">Olympic Gold for India</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-10" href="#CUB" title="CUB">CUB</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-11" href="#Anti-Proxy_Attendance" title="Anti-Proxy Attendance">Anti-Proxy Attendance</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-12" href="#Efficiency_of_Car" title="Efficiency of Car">Efficiency of Car</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-13" href="#SRM_Admission" title="SRM Admission">SRM Admission</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-14" href="#Store_Keeper" title="Store Keeper">Store Keeper</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-15" href="#Dhoni_the_CEO" title="Dhoni the CEO">Dhoni the CEO</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-16" href="#Fill_Water" title="Fill Water">Fill Water</a></li><li class='ez-toc-page-1 ez-toc-heading-level-3'><a class="ez-toc-link ez-toc-heading-17" href="#Hospital_Bill" title="Hospital Bill">Hospital Bill</a></li></ul></li></ul></nav></div>
+<h2 style="text-align: center;"><span class="ez-toc-section" id="Table_of_content"></span><strong>Table of content</strong><span class="ez-toc-section-end"></span></h2><p style="text-align: center;">[CODE SOURCE : GOOGLE]</p><ul><li><a href="#limka">LIMKA BOOK OF RECORDS </a></li><li><a href="#sarvana">SARAVANA STORES </a></li><li><a href="#smart">SMART APPRAISAL SYSTEM </a></li><li><a href="#profit">PROFIT OF THE DAY </a></li><li><a href="#bcd">BCD </a></li><li><a href="#database">DATABASE ADMINISTRATOR </a></li><li><a href="#business">BUSINESS MAN </a></li><li><a href="#olympic">OLYMPIC GOLD FOR INDIA </a></li><li><a href="#cub"> CUB</a></li><li><a href="#anti">ANTI-PROXY ATTENDANCE</a></li><li><a href="#efficiency">EFFICIENCY OF CAR</a></li><li><a href="#srm">SRM ADMISSION</a></li><li><a href="#store">STORE KEEPER</a></li><li><a href="#dhoni">DHONI THE CEO</a></li><li><a href="#fill">FILL WATER </a></li><li><a href="#hospital">HOSPITAL BILL</a></li></ul> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-2b581cb elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2b581cb" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e7e067c" data-id="e7e067c" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-daf6e42 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="daf6e42" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-bbbfc54 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="bbbfc54" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a49e678" data-id="a49e678" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-294f3c8 elementor-widget elementor-widget-menu-anchor" data-id="294f3c8" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="limka" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-e2985f6 elementor-widget elementor-widget-text-editor" data-id="e2985f6" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p style="text-align: center;"><strong><a href="https://amzn.to/3hgxPvu">Click here Amazon Best selling product </a></strong></p><p><a href="https://amzn.to/3hgxPvu"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1279 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1279 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1279 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1279 aligncenter" src="../wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></noscript></a></p><p style="text-align: center;">Code : Miru2021</p><div class='code-block code-block-2' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="2547113697" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Limka_Book_of_Records"></span>Limka Book of Records<span class="ez-toc-section-end"></span></h3><div class="post-header"><div class="post-header-line-1"> </div></div><div id="post-body-3473608817709549621" class="post-body entry-content"><div dir="ltr">#include &lt;iostream&gt;<br />using namespace std;<br />class Welcomemsg<br />{<br />public:<br />int msg(char fstname[100])<br />{<br />cout&lt;&lt;"Hi "&lt;&lt;fstname&lt;&lt;endl;<br />return 0;<br />}<br />int msg(char fstname[100],char lstname[100])<br />{<br />cout&lt;&lt;"Welcome "&lt;&lt;fstname&lt;&lt;" "&lt;&lt;lstname&lt;&lt;endl;<br />return 0;<br />}<br />};<br />int main()<br />{<br />Welcomemsg ob;<br />char first_name1[100], first_name2[100], last_name2[100];<br />cin&gt;&gt;first_name1&gt;&gt;first_name2&gt;&gt;last_name2;<br />ob.msg(first_name1);<br />ob.msg(first_name2,last_name2);<br />return 0;<br />}</div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-9481ff5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9481ff5" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-37e800f" data-id="37e800f" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-ca30b6d elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="ca30b6d" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-c6f709b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c6f709b" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a985579" data-id="a985579" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-00a1b0f elementor-widget elementor-widget-menu-anchor" data-id="00a1b0f" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="sarvana" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-4dcfb0c elementor-widget elementor-widget-text-editor" data-id="4dcfb0c" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Saravana_Stores"></span>Saravana Stores<span class="ez-toc-section-end"></span></h3><div class="post-header"><div class="post-header-line-1"> </div></div><div id="post-body-5930673040931148331" class="post-body entry-content"><div dir="ltr"><p>#include&lt;iostream&gt;<br />using namespace std;<br />class Salary<br />{<br />public:<br />int Increment(int currsal)<br />{<br />return currsal;<br />}<br />int Increment(int currsal,int bonus)<br />{<br />int c;<br />c = currsal+bonus;<br />return c;<br />}<br />};<br />int main()<br />{<br />int currsal,bonus;<br />cin&gt;&gt;currsal&gt;&gt;bonus;<br />Salary ob;</p><p>//cout&lt;&lt;currsal&lt;&lt;endl&lt;&lt;(currsal+bonus);<br />cout&lt;&lt;ob.Increment(currsal)&lt;&lt;endl;<br />// cout&lt;&lt;x&lt;&lt;endl;<br />cout&lt;&lt;ob.Increment(currsal,bonus)&lt;&lt;endl;<br />return 0;</p><p>}</p><p style="text-align: center;"><a href="https://amzn.to/2Tub6Dp"><strong>Best and gaming mouse pad </strong></a></p><p><a href="https://amzn.to/2Tub6Dp"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1317 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1317 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1317 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1317 aligncenter" src="../wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></noscript></a></p></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-2f1cc5a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2f1cc5a" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-dd06767" data-id="dd06767" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-7dc2c51 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="7dc2c51" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-1da482e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1da482e" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6ff6a5b" data-id="6ff6a5b" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-11f2b27 elementor-widget elementor-widget-menu-anchor" data-id="11f2b27" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="smart" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-634e899 elementor-widget elementor-widget-text-editor" data-id="634e899" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Smart_Appraisal_System"></span>Smart Appraisal System<span class="ez-toc-section-end"></span></h3><div class="post-header"><div class="post-header-line-1"> </div></div><div id="post-body-5391336187364700858" class="post-body entry-content"><div dir="ltr"><p>#include &lt;iostream&gt;<br />#include &lt;string.h&gt;<br />using namespace std;<br />class TestClass<br />{<br />  public:<br />class Appraisal<br />{<br />  int sal;<br />  public:<br />  void in()<br />  {<br />    cin&gt;&gt;sal;<br />  }<br />  void out()<br />  {</p><div class='code-block code-block-3' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="2547113697" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p style="text-align: center;"><strong><a href="https://amzn.to/3hk5fcW">Stunning Keyboard and Mouse </a></strong></p><p><a href="https://amzn.to/3hk5fcW"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-1024x1024.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_.jpg 1200w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1320 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-1024x1024.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_.jpg 1200w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1320 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1320 aligncenter" src="../wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-1024x1024.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></a></p><p>    cout&lt;&lt;"\nNew Salary:"&lt;&lt;sal;<br />  }<br />  Appraisal()<br />  {<br />    sal=30000;<br />    cout&lt;&lt;"Old Salary:"&lt;&lt;sal;</p><p>  }<br />};<br />};<br />int main() {</p><p>TestClass::Appraisal myobj;<br />  TestClass::Appraisal myobj2();<br />  myobj.in();<br />  myobj.out();<br />return 0;<br />}</p></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-1184876 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1184876" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-ba3659a" data-id="ba3659a" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-5bcc87e elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="5bcc87e" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-c70f136 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c70f136" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3e86432" data-id="3e86432" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-f67b15c elementor-widget elementor-widget-menu-anchor" data-id="f67b15c" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="profit" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-a492411 elementor-widget elementor-widget-text-editor" data-id="a492411" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Profit_of_the_Day"></span>Profit of the Day<span class="ez-toc-section-end"></span></h3><div class="post-header"><div class="post-header-line-1"><p style="text-align: center;"><strong><a href="https://amzn.to/3dHOUws">Best router for gamers </a></strong></p><p><a href="https://amzn.to/3dHOUws"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1322 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1322 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1322 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1322 aligncenter" src="../wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></noscript></a></p></div></div><div id="post-body-5333168872321386120" class="post-body entry-content"><div dir="ltr"><p>#include &lt;iostream&gt;<br />#include&lt;iomanip&gt;<br />using namespace std;<br />class profit<br />{<br />  public:<br />  float p;<br />  profit()<br />  {<br />    p=0;<br />  }<br />  profit(int income,int expenses)</p><div class='code-block code-block-4' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="9127660454" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><br />  {<br />    p=((float(income)/float(expenses))*100)-100;<br />    cout&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;p&lt;&lt;"%";<br />  }<br />};<br />int main() {<br />  int i,n;<br />  cin&gt;&gt;i&gt;&gt;n;<br />profit share(i,n);</p><p>return 0;<br />}</p></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-acc0f69 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="acc0f69" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7086750" data-id="7086750" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-edfe2e6 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="edfe2e6" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-78e72b0 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="78e72b0" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7848487" data-id="7848487" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-f193522 elementor-widget elementor-widget-menu-anchor" data-id="f193522" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="bcd" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-53446f2 elementor-widget elementor-widget-text-editor" data-id="53446f2" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3><span class="ez-toc-section" id="BCD_Game"></span>BCD Game<span class="ez-toc-section-end"></span></h3><div><div> </div></div><div><div dir="ltr"><p>#include&lt;iostream&gt;<br />using namespace std;</p><p>class Code<br />{<br />int number;</p><p>public:<br />void initializeData(int n)<br />{<br />number = n;<br />}<br />int convertToStraightBinary()<br />{<br />int binaryNum[12];<br />int i = 0;<br />while (number &gt; 0)<br />{<br />binaryNum[i] = number % 2;<br />number = number / 2;<br />i++;<br />}<br />FILL:<br />if (i &lt; 12)<br />{<br />binaryNum[i] = 0;<br />i++;<br />goto FILL;</p><p>}<br />for (int j = i &#8211; 1; j &gt;= 0; j&#8211;)<br />cout &lt;&lt; binaryNum[j];<br />}<br />};</p><p>int main()<br />{<br />Code obj;<br />int n;<br />cin &gt;&gt; n;<br />obj.initializeData(n);<br />obj.convertToStraightBinary();<br />return 0;<br />}</p></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-e43016f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e43016f" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d709edb" data-id="d709edb" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-2b9cf43 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="2b9cf43" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-80ed630 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="80ed630" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-22f73bb" data-id="22f73bb" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-b1a8bd6 elementor-widget elementor-widget-menu-anchor" data-id="b1a8bd6" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="database" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-0f8bc72 elementor-widget elementor-widget-text-editor" data-id="0f8bc72" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Database_Administrator"></span>Database Administrator<span class="ez-toc-section-end"></span></h3><div class="post-header"><div class="post-header-line-1"> </div></div><div id="post-body-8024039657385280808" class="post-body entry-content"><div dir="ltr"><p>#include &lt;iostream&gt;<br />#include&lt;string.h&gt;<br />using namespace std;</p><p>class StudentData<br />{char stuName[50];<br />  public:<br /> StudentData()<br />  { cout&lt;&lt;"Student Name is: New Student"&lt;&lt;endl;}<br /> StudentData(char *n)<br /> { strcpy(stuName,n);<br />  cout&lt;&lt;"Student Name is: "&lt;&lt;stuName;}<br />};</p><p>  class TestClass<br />{ char n[50];<br /> public:<br /> TestClass()<br /> {StudentData myobj;<br />  cin&gt;&gt;n;<br />  StudentData myobj2(n);}<br />};</p><p>int main() {<br />TestClass t;<br />return 0;<br />}</p><p style="text-align: center;"><a href="https://amzn.to/2Tub6Dp"><strong>Best and gaming mouse pad </strong></a></p><div class='code-block code-block-5' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="9127660454" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><a href="https://amzn.to/2Tub6Dp"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1317 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1317 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1317 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1317 aligncenter" src="../wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></noscript></a></p></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-596e8d4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="596e8d4" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3c64289" data-id="3c64289" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-d46e876 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="d46e876" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-b400ae2 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b400ae2" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4f77f3b" data-id="4f77f3b" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-9f87bbb elementor-widget elementor-widget-menu-anchor" data-id="9f87bbb" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="business" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-41b39c4 elementor-widget elementor-widget-text-editor" data-id="41b39c4" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Business_Man"></span>Business Man<span class="ez-toc-section-end"></span></h3><div class="post-header"><div class="post-header-line-1"> </div></div><div id="post-body-8824647412410505795" class="post-body entry-content"><div dir="ltr"> #include &lt;iostream&gt;<br />using namespace std;<br />class TestClass<br />{<br />  public:<br />class profit<br />{<br />  int Income=0,Expenses;<br /> public:<br />  void in()<br />  {<br />    cin&gt;&gt;Income&gt;&gt;Expenses;<br />  }<br />  void out()<br />  {<br />    cout&lt;&lt;Income-Expenses;<br />  }<br />  profit()<br />  {<br />    Income=0;<br />    Expenses=0;<br />  }<br />  profit(int income,int expenses)<br />  {<br />    Income=income;<br />    Expenses=expenses;<br />  }<br />};<br />};<br />int main() {<br />TestClass :: profit s1(0,0);<br />  s1.in();<br />  s1.out();<br />return 0;<br />}</div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-d0ec407 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d0ec407" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bb29df7" data-id="bb29df7" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-7e5ae02 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="7e5ae02" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-448c197 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="448c197" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-12ba303" data-id="12ba303" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-d261d3f elementor-widget elementor-widget-menu-anchor" data-id="d261d3f" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="olympic" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-e9af914 elementor-widget elementor-widget-text-editor" data-id="e9af914" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<p style="text-align: center;"><strong><a href="https://amzn.to/3dHOUws">Best router for gamers </a></strong></p><p><a href="https://amzn.to/3dHOUws"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1322 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1322 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1322 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1322 aligncenter" src="../wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></noscript></a></p><h3 class="post-title entry-title"><span class="ez-toc-section" id="Olympic_Gold_for_India"></span>Olympic Gold for India<span class="ez-toc-section-end"></span></h3><div class="post-header"><div class="post-header-line-1"> </div></div><div id="post-body-8593707223396637371" class="post-body entry-content"><div dir="ltr"><p>#include &lt;iostream&gt;<br />using namespace std;<br />class Olympic<br />{public:<br />int distance(int D1,int D2)<br />{return D1+D2;}<br /> int distance(int D3,int D4,int D5)<br /> {return D3+D4+D5;}<br />};<br />int main() {<br />Olympic ob;<br />  int D1,D2,D3,D4,D5;<br />  cin&gt;&gt;D1&gt;&gt;D2&gt;&gt;D3&gt;&gt;D4&gt;&gt;D5;<br />   cout&lt;&lt;ob.distance(D1,D2)&lt;&lt;" meters"&lt;&lt;endl;<br />   cout&lt;&lt;ob.distance(D3,D4,D5)&lt;&lt;" meters"&lt;&lt;endl;</p><p>return 0;<br />}</p></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-0caced9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0caced9" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-99aae3d" data-id="99aae3d" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-6a7947f elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="6a7947f" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-0a29f6b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0a29f6b" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d5b2af9" data-id="d5b2af9" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-53afa23 elementor-widget elementor-widget-menu-anchor" data-id="53afa23" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="cub" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-f47ed4b elementor-widget elementor-widget-text-editor" data-id="f47ed4b" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3><span class="ez-toc-section" id="CUB"></span>CUB<span class="ez-toc-section-end"></span></h3><p> </p><p>#include&lt;bits/stdc++.h&gt;</p><p>using namespace std;</p><p>class AccBalance</p><p>{</p><p>  public:</p><div class='code-block code-block-6' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="9127660454" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>  string val;</p><p style="text-align: center;"><strong><a href="https://amzn.to/3hgxPvu">Click here Amazon Best selling product </a></strong></p><p><a href="https://amzn.to/3hgxPvu"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1279 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1279 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1279 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1279 aligncenter" src="../wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></noscript></a></p><p style="text-align: center;">Code : Miru2021</p><p>  AccBalance()</p><p>  {</p><p>    val = "Zero Balance";</p><p>    cout&lt;&lt;val&lt;&lt;endl;</p><p>  }</p><p>  AccBalance(float bal){</p><div class='code-block code-block-7' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="9127660454" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>    if(bal&lt;0){</p><p>      cout&lt;&lt;"Negative";</p><p>    }</p><p>    else if(bal&gt;0){</p><p>      cout&lt;&lt;"Positive";</p><p>    }</p><p>    else{</p><p>      cout&lt;&lt;"Zero";</p><p>    }</p><p>  }</p><div class='code-block code-block-8' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="9127660454" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p>};</p><p>int main() {</p><p>  AccBalance defltBal;</p><p>  float x;</p><p>  cin&gt;&gt;x;</p><p>  AccBalance currBal(x);</p><p>        return 0;</p><p>}</p> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-031997e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="031997e" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-93c6d26" data-id="93c6d26" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-13cccfc elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="13cccfc" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-c29cc43 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c29cc43" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-71aa6ec" data-id="71aa6ec" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-0bb3a95 elementor-widget elementor-widget-menu-anchor" data-id="0bb3a95" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="anti" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-defc398 elementor-widget elementor-widget-text-editor" data-id="defc398" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Anti-Proxy_Attendance"></span>Anti-Proxy Attendance<span class="ez-toc-section-end"></span></h3><div class="post-header"><div class="post-header-line-1"> </div></div><div id="post-body-3267544798360726438" class="post-body entry-content"><div dir="ltr">#include &lt;iostream&gt;<br />#include &lt;string.h&gt;<br />using namespace std;<br />class Student<br />{<br />  char stuname[20];<br />  public:<br />   Student()<br />   {<br />     cout&lt;&lt;"No Attendance";<br />   }<br />  Student(char name[])<br />  {<br />    strcpy(stuname,name);<br />  }<br />  void display()<br />  {<br />    cout&lt;&lt;"\nHello "&lt;&lt;stuname&lt;&lt;endl;<br />  }<br />};<br />int main()<br />{<br />Student stdabs;<br />    char name[20];<br />    cin&gt;&gt;name;<br />    Student stdpst(name);<br />    stdpst.display();<br />return 0;<br />}</div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-0f17891 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0f17891" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c8b50da" data-id="c8b50da" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-d716022 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="d716022" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-f05cde8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f05cde8" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-27adab4" data-id="27adab4" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-d9c2fcf elementor-widget elementor-widget-menu-anchor" data-id="d9c2fcf" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="efficiency" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-66cc944 elementor-widget elementor-widget-text-editor" data-id="66cc944" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Efficiency_of_Car"></span>Efficiency of Car<span class="ez-toc-section-end"></span></h3><div class="post-header"><div class="post-header-line-1"><p style="text-align: center;"><strong><a href="https://amzn.to/2TBLqEM">Check out your favourite anime character </a></strong></p><p><a href="https://amzn.to/2TBLqEM"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-768x768.jpg 768w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1323 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-768x768.jpg 768w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1323 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1323 aligncenter" src="../wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/617cHC56XL._SL1024_-768x768.jpg 768w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></a></p><div class='code-block code-block-9' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="9127660454" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div><div class="post-header-line-1"> </div></div><div id="post-body-1575885981203062089" class="post-body entry-content"><div dir="ltr">#include &lt;iostream&gt;<br />using namespace std;<br />class Car<br />{<br />  public:<br />  float startMiles, endMiles, litres;<br />  float perlitre;<br />  void initializeData(float s,float e,float l)<br />  {<br />    cin&gt;&gt;startMiles&gt;&gt;endMiles&gt;&gt;litres;<br />  }<br />  float getstartMiles()<br />  {<br />    return startMiles;<br />  }<br />  float getEndMiles()<br />  {<br />    return endMiles;<br />  }<br />  float getLitres()<br />  {<br />    return litres;<br />  }<br />  double calculateMPL()<br />  {<br />    perlitre = (endMiles-startMiles)/litres;<br />    return perlitre;<br />  }<br />  string isEconomycar()<br />  {<br />    if(perlitre&gt;18)<br />      return "true";<br />    else if(perlitre&lt;18)<br />      return "false";<br />    else<br />      return "Improper readings";<br />  }<br />};<br />int main()<br />{<br />    Car obj;<br />    float a, b, c;<br />    obj.startMiles;<br />    obj.endMiles;<br />    obj.litres;<br />    obj.perlitre;<br />   obj.initializeData(a, b, c);<br />    if(obj.calculateMPL()&gt;=0)<br />    {<br />      cout&lt;&lt;obj.getstartMiles()&lt;&lt;endl;<br />      cout&lt;&lt;obj.getEndMiles()&lt;&lt;endl;<br />      cout&lt;&lt;obj.calculateMPL()&lt;&lt;endl;<br />      cout&lt;&lt;obj.getLitres()&lt;&lt;endl;<br />      cout&lt;&lt;obj.isEconomycar()&lt;&lt;endl;<br />    }<br />    else<br />      cout&lt;&lt;"Improper readings"&lt;&lt;endl;<br />    return 0;<br />}</div></div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-8628fb3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8628fb3" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b2c0fbc" data-id="b2c0fbc" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-cea63ff elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="cea63ff" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-0508d3a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0508d3a" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bca34b3" data-id="bca34b3" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-b1734ec elementor-widget elementor-widget-menu-anchor" data-id="b1734ec" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="srm" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-54e1b9a elementor-widget elementor-widget-text-editor" data-id="54e1b9a" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="SRM_Admission"></span>SRM Admission<span class="ez-toc-section-end"></span></h3><div class="post-header"><div class="post-header-line-1"> </div></div><div id="post-body-2357107144770552130" class="post-body entry-content"><div dir="ltr">#include &lt;iostream&gt;<br />using namespace std;<br />class Student<br />{<br />public:<br />void Identity(char name[100], int id)<br />{<br />cout&lt;&lt;name&lt;&lt;" "&lt;&lt;id&lt;&lt;endl;<br />}<br />void Identity(int id, char name[100])<br />{<br />cout&lt;&lt;name&lt;&lt;" "&lt;&lt;id&lt;&lt;endl;<br />}<br />};<br />int main()<br />{<br />char name[100];<br />int id;<br />cin&gt;&gt;name&gt;&gt;id;<br />Student s1;<br />s1.Identity(name, id);<br />cin&gt;&gt;id&gt;&gt;name;<br />s1.Identity(id, name);<br />return 0;<br />}</div><div dir="ltr"><p style="text-align: center;"><a href="https://amzn.to/2Tub6Dp"><strong>Best and gaming mouse pad </strong></a></p><p><a href="https://amzn.to/2Tub6Dp"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1317 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1317 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1317 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1317 aligncenter" src="../wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61G5-hNFMYL._SL1000_.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></noscript></a></p></div></div> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-75b17e1 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="75b17e1" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-d1735ad elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d1735ad" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7c693c2" data-id="7c693c2" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-38b08ea elementor-widget elementor-widget-menu-anchor" data-id="38b08ea" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="store" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-6fcd7cb elementor-widget elementor-widget-text-editor" data-id="6fcd7cb" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Store_Keeper"></span>Store Keeper<span class="ez-toc-section-end"></span></h3><p> </p><p>#include&lt;iostream&gt;<br />using namespace std;<br />class Store<br />{<br />public:<br />int itemcount(int id)<br />{<br />return id;<br />}<br />int itemcount(int totalavl,int consumed)<br />{<br />return totalavl-consumed;<br />}<br />};<br />int main() {<br />int id,a,b;<br />int item,lol;<br />cin&gt;&gt;id&gt;&gt;a&gt;&gt;b;</p><p>Store ob;<br />item=ob.itemcount(id);<br />cout&lt;&lt;item&lt;&lt;endl;<br />lol=ob.itemcount(a,b);<br />cout&lt;&lt;lol;</p><p>return 0;<br />}</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-e4894eb elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="e4894eb" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-97610a7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="97610a7" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-fb9d3e2" data-id="fb9d3e2" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-5bca4da elementor-widget elementor-widget-menu-anchor" data-id="5bca4da" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="dhoni" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-8fe88b6 elementor-widget elementor-widget-text-editor" data-id="8fe88b6" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Dhoni_the_CEO"></span>Dhoni the CEO<span class="ez-toc-section-end"></span></h3><div class="post-header"><p style="text-align: center;"><strong><a href="https://amzn.to/3dHOUws">Best router for gamers </a></strong></p><p><a href="https://amzn.to/3dHOUws"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1322 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1322 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1322 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1322 aligncenter" src="../wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/51ax8peHlPL._SL1000_.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></noscript></a></p><div class="post-header-line-1"> </div><div class="post-header-line-1"> </div></div><div id="post-body-2469929321341614544" class="post-body entry-content"><div dir="ltr">#include &lt;iostream&gt;<br />using namespace std;<br />class TestClass<br />{<br />  public:<br />class Salary<br />{<br />  public:<br />  Salary()<br />  {<br />    int deftsalary;<br />    deftsalary=10000;<br />    cout&lt;&lt;deftsalary&lt;&lt;endl;<br />  }<br />  Salary(int ExpectedSalary)<br />  {<br />    cin&gt;&gt;ExpectedSalary;<br />    cout&lt;&lt;ExpectedSalary&lt;&lt;endl;<br />  }<br />};<br />};<br />int main()<br />{<br />  TestClass::Salary myobj;<br />  int ExpectedSalary;<br />  cin&gt;&gt;ExpectedSalary;<br />  TestClass::Salary myobj2(ExpectedSalary);<br />  return 0;<br />}</div></div> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-38c9055 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="38c9055" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-c29aa75 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c29aa75" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-34a53a1" data-id="34a53a1" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-f827913 elementor-widget elementor-widget-menu-anchor" data-id="f827913" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="fill" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-1926b5f elementor-widget elementor-widget-text-editor" data-id="1926b5f" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<h3 class="post-title entry-title"><span class="ez-toc-section" id="Fill_Water"></span>Fill Water<span class="ez-toc-section-end"></span></h3><div><p style="text-align: center;"><strong><a href="https://amzn.to/3hk5fcW">Stunning Keyboard and Mouse </a></strong></p><p><a href="https://amzn.to/3hk5fcW"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-1024x1024.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_.jpg 1200w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1320 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-1024x1024.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_.jpg 1200w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1320 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1320 aligncenter" src="../wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-1024x1024.jpg 1024w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61drIizdNL._SL1200_.jpg 1200w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></a></p><div class='code-block code-block-10' style='margin: 8px auto; text-align: center; display: block; clear: both;'>
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="9127660454" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div><p> </p><p>#include&lt;iostream&gt;<br />using namespace std;<br />class Box<br />{<br />double width, height, depth;</p><p>public:<br />Box()<br />{<br />width = 0;<br />height = 0;<br />depth = 0;<br />}<br />Box(double samevalue)<br />{<br />width = samevalue;<br />height = samevalue;<br />depth = samevalue;<br />}<br />double volume()<br />{<br />return width * height * depth;<br />}<br />};<br />int main()<br />{<br />Box mybox1;<br />double a, vol;<br />cout &lt;&lt; mybox1.volume() &lt;&lt; endl;<br />cin &gt;&gt; a;<br />Box mybox2(a);<br />vol = mybox2.volume();<br />cout &lt;&lt; vol;<br />return 0;<br />}</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-fd9fda4 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="fd9fda4" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-99700ed elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="99700ed" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cd57f6c" data-id="cd57f6c" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-0b1b435 elementor-widget elementor-widget-menu-anchor" data-id="0b1b435" data-element_type="widget" data-widget_type="menu-anchor.default">
+<div class="elementor-widget-container">
+<div id="hospital" class="elementor-menu-anchor"></div>
+</div>
+</div>
+<div class="elementor-element elementor-element-99bebc1 elementor-widget elementor-widget-text-editor" data-id="99bebc1" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<div class="elementor-text-editor elementor-clearfix">
+<div class="fauxcolumn-outer fauxcolumn-left-outer"><div class="fauxborder-left"><p style="text-align: center;"><strong><a href="https://amzn.to/3hgxPvu">Click here Amazon Best selling product </a></strong></p><p><a href="https://amzn.to/3hgxPvu"><img decoding="async" alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w" data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1279 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1279 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="" width="300" height="300" data-srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w"  data-src="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" data-sizes="(max-width: 300px) 100vw, 300px" class="size-medium wp-image-1279 aligncenter lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="size-medium wp-image-1279 aligncenter" src="../wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg" alt="" width="300" height="300" srcset="https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-300x300.jpg 300w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-150x150.jpg 150w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_-768x768.jpg 768w, https://srmnotesadda.in/wp-content/uploads/2021/07/61WUqJd4dfS._SL1000_.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></noscript></noscript></a></p><p style="text-align: center;">Code : Miru2021</p><h3 class="fauxcolumn-inner"><span class="ez-toc-section" id="Hospital_Bill"></span>Hospital Bill<span class="ez-toc-section-end"></span></h3></div></div><p>#include&lt;iostream&gt;<br />using namespace std;<br />class Hospital<br />{<br />public:<br />float bill(float medicines, float days)<br />{<br />float sum = medicines * days;<br />return sum;<br />}<br />int bill(int room, int days)<br />{<br />int sum = room * days;<br />return sum;<br />}<br />};</p><p>int main()<br />{<br />Hospital ob;<br />float a, b;<br />cin &gt;&gt; a &gt;&gt; b;<br />float sum1 = ob.bill(a, b);<br />cout &lt;&lt; sum1 &lt;&lt; endl;<br />cin &gt;&gt; a &gt;&gt; b;<br />float sum2 = ob.bill(a, b);<br />cout &lt;&lt; sum2 &lt;&lt; endl;<br />return 0;<br />}</p> </div>
+</div>
+</div>
+<div class="elementor-element elementor-element-424e650 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="424e650" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+
+</div>
+<div id="comments" class="comments-area">
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Cancel reply</a></small>
+</h3>
+<form id="commentform" class="comment-form">
+<iframe title="Comment Form" name="jetpack_remote_comment" style="width:100%; height: 430px; border:0;" id="jetpack_remote_comment" sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms allow-popups" data-src="https://jetpack.wordpress.com/jetpack-comment/?blogid=182630788&#038;postid=661&#038;comment_registration=0&#038;require_name_email=1&#038;stc_enabled=1&#038;stb_enabled=1&#038;show_avatars=1&#038;avatar_default=mystery&#038;greeting=Leave+a+Reply&#038;jetpack_comments_nonce=8e1f6aacb5&#038;greeting_reply=Leave+a+Reply+to+%25s&#038;color_scheme=dark&#038;lang=en_US&#038;jetpack_version=11.5.1&#038;show_cookie_consent=10&#038;has_cookie_consent=0&#038;token_key=%3Bnormal%3B&#038;sig=8ee11ec280403675e2dd3b2d939a93ab0f1e0eca#parent=https%3A%2F%2Fsrmnotesadda.in%2Ffunction-and-constructor-overloading%2F" class="jetpack_remote_comment lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+									</iframe>
+<!--[if !IE]><!-->
+<script>
+						document.addEventListener('DOMContentLoaded', function () {
+							var commentForms = document.getElementsByClassName('jetpack_remote_comment');
+							for (var i = 0; i < commentForms.length; i++) {
+								commentForms[i].allowTransparency = false;
+								commentForms[i].scrolling = 'no';
+							}
+						});
+					</script>
+<!--<![endif]-->
+</form>
+</div>
+<input type="hidden" name="comment_parent" id="comment_parent" value="" />
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="site-footer" id="site-footer">
+<div class="hfg_footer">
+<div class="footer--row footer-bottom layout-full-contained" id="cb-row--footer-bottom" data-row-id="bottom" data-show-on="desktop">
+<div class="footer--row-inner footer-bottom-inner footer-content-wrap">
+<div class="container">
+<div class="hfg-grid nv-footer-content hfg-grid-bottom row--wrapper row " data-section="hfg_footer_layout_bottom">
+<div class="builder-item hfg-item-last hfg-item-first col-7 desktop-right tablet-left mobile-left offset-5"><div class="item--inner builder-item--footer-menu has_menu" data-section="footer_menu_primary" data-item-id="footer-menu">
+<div class="component-wrap">
+<div role="navigation" class="style-plain nav-menu-footer" aria-label="Footer Menu">
+<ul id="footer-menu" class="footer-menu nav-ul"><li id="menu-item-1144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1144"><a href="../index.html">HOME</a></li>
+<li id="menu-item-1142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1142"><a href="../disclaimer/index.html">Disclaimer</a></li>
+<li id="menu-item-1143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1143"><a href="../privacy-policy/index.html">Privacy Policy</a></li>
+<li id="menu-item-1777" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1777"><a href="../faq/index.html">FAQ</a></li>
+</ul> </div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div id="divFLRARight" style="display: none;position: absolute;top: 0px;width:130px;height:400px;overflow:hidden;z-index:999;"><script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="7047746199" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<div id="divFLRALeft" style="display: none;position: absolute;top: 0px;width:130px;height:400px;overflow:hidden;z-index:999;"><script async src="../../pagead2.googlesyndication.com/pagead/js/f9d81.txt?client=ca-pub-4410075145665018" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4410075145665018" data-ad-slot="7047746199" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<div id="wpfront-scroll-top-container">
+<img alt="Back to Top" data-src="https://srmnotesadda.in/wp-content/plugins/wpfront-scroll-top/images/icons/12.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img src="../wp-content/plugins/wpfront-scroll-top/images/icons/12.png" alt="Back to Top" /></noscript> </div>
+<script type="text/javascript">
+            function wpfront_scroll_top_init() {
+                if (typeof wpfront_scroll_top === "function" && typeof jQuery !== "undefined") {
+                    wpfront_scroll_top({"scroll_offset":100,"button_width":0,"button_height":0,"button_opacity":0.8,"button_fade_duration":200,"scroll_duration":400,"location":1,"marginX":20,"marginY":20,"hide_iframe":false,"auto_hide":true,"auto_hide_after":2,"button_action":"top","button_action_element_selector":"","button_action_container_selector":"html, body","button_action_element_offset":0});
+                } else {
+                    setTimeout(wpfront_scroll_top_init, 100);
+                }
+            }
+            wpfront_scroll_top_init();
+        </script>
+<link rel='stylesheet' id='e-animations-css' href='../wp-content/plugins/elementor/assets/lib/animations/animations.min9e95.css?ver=3.8.0' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-content/plugins/wpfront-scroll-top/js/wpfront-scroll-top.min47ac.js?ver=2.0.7.08086' id='wpfront-scroll-top-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/ad-invalid-click-protector/assets/js/js.cookie.min6e0e.js?ver=3.0.0' id='js-cookie-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/ad-invalid-click-protector/assets/js/jquery.iframetracker.min3c94.js?ver=2.1.0' id='js-iframe-tracker-js'></script>
+<script type='text/javascript' id='aicp-js-extra'>
+/* <![CDATA[ */
+var AICP = {"ajaxurl":"https:\/\/srmnotesadda.in\/wp-admin\/admin-ajax.php","nonce":"ed296b58e4","ip":"103.255.232.154","clickLimit":"2","clickCounterCookieExp":"24","banDuration":"7","countryBlockCheck":"No","banCountryList":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/ad-invalid-click-protector/assets/js/aicp.min5152.js?ver=1.0' id='aicp-js'></script>
+<script type='text/javascript' id='neve-script-js-extra'>
+/* <![CDATA[ */
+var NeveProperties = {"ajaxurl":"https:\/\/srmnotesadda.in\/wp-admin\/admin-ajax.php","nonce":"1afeb3997e","isRTL":"","isCustomize":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/neve/assets/js/build/modern/frontendedb1.js?ver=3.4.4' id='neve-script-js' async></script>
+<script type='text/javascript' id='neve-script-js-after'>
+	var html = document.documentElement;
+	var theme = html.getAttribute('data-neve-theme') || 'light';
+	var variants = {"logo":{"light":{"src":"https:\/\/srmnotesadda.in\/wp-content\/uploads\/2020\/09\/cropped-Tag-line.png","srcset":"https:\/\/srmnotesadda.in\/wp-content\/uploads\/2020\/09\/cropped-Tag-line.png 1400w, https:\/\/srmnotesadda.in\/wp-content\/uploads\/2020\/09\/cropped-Tag-line-300x75.png 300w, https:\/\/srmnotesadda.in\/wp-content\/uploads\/2020\/09\/cropped-Tag-line-1024x256.png 1024w, https:\/\/srmnotesadda.in\/wp-content\/uploads\/2020\/09\/cropped-Tag-line-768x192.png 768w","sizes":"(max-width: 1400px) 100vw, 1400px"},"dark":{"src":"https:\/\/srmnotesadda.in\/wp-content\/uploads\/2020\/09\/cropped-Tag-line.png","srcset":"https:\/\/srmnotesadda.in\/wp-content\/uploads\/2020\/09\/cropped-Tag-line.png 1400w, https:\/\/srmnotesadda.in\/wp-content\/uploads\/2020\/09\/cropped-Tag-line-300x75.png 300w, https:\/\/srmnotesadda.in\/wp-content\/uploads\/2020\/09\/cropped-Tag-line-1024x256.png 1024w, https:\/\/srmnotesadda.in\/wp-content\/uploads\/2020\/09\/cropped-Tag-line-768x192.png 768w","sizes":"(max-width: 1400px) 100vw, 1400px"},"same":true}};
+
+	function setCurrentTheme( theme ) {
+		var pictures = document.getElementsByClassName( 'neve-site-logo' );
+		for(var i = 0; i<pictures.length; i++) {
+			var picture = pictures.item(i);
+			if( ! picture ) {
+				continue;
+			};
+			var fileExt = picture.src.slice((Math.max(0, picture.src.lastIndexOf(".")) || Infinity) + 1);
+			if ( fileExt === 'svg' ) {
+				picture.removeAttribute('width');
+				picture.removeAttribute('height');
+				picture.style = 'width: var(--maxwidth)';
+			}
+			var compId = picture.getAttribute('data-variant');
+			if ( compId && variants[compId] ) {
+				var isConditional = variants[compId]['same'];
+				if ( theme === 'light' || isConditional || variants[compId]['dark']['src'] === false ) {
+					picture.src = variants[compId]['light']['src'];
+					picture.srcset = variants[compId]['light']['srcset'] || '';
+					picture.sizes = variants[compId]['light']['sizes'];
+					continue;
+				};
+				picture.src = variants[compId]['dark']['src'];
+				picture.srcset = variants[compId]['dark']['srcset'] || '';
+				picture.sizes = variants[compId]['dark']['sizes'];
+			};
+		};
+	};
+
+	var observer = new MutationObserver(function(mutations) {
+		mutations.forEach(function(mutation) {
+			if (mutation.type == 'attributes') {
+				theme = html.getAttribute('data-neve-theme');
+				setCurrentTheme(theme);
+			};
+		});
+	});
+
+	observer.observe(html, {
+		attributes: true
+	});
+</script>
+<script type='text/javascript' src='../../c0.wp.com/c/6.1.1/wp-includes/js/comment-reply.min.js' id='comment-reply-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/wp-smushit/app/assets/js/smush-lazy-load.min0fca.js?ver=3.12.3' id='smush-lazy-load-js'></script>
+<script type='text/javascript' src='../../cdn.onesignal.com/sdks/OneSignalSDK6a4d.js?ver=6.1.1' async='async' id='remote_sdk-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/easy-table-of-contents/vendor/smooth-scroll/jquery.smooth-scroll.min3601.js?ver=2.2.0' id='ez-toc-jquery-smooth-scroll-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min77e6.js?ver=2.2.1' id='ez-toc-js-cookie-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min2c00.js?ver=1.9.2' id='ez-toc-jquery-sticky-kit-js'></script>
+<script type='text/javascript' id='ez-toc-js-js-extra'>
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","visibility_hide_by_default":"","width":"auto","scroll_offset":"30"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/easy-table-of-contents/assets/js/front.min095f.js?ver=2.0.36.1-1667995079' id='ez-toc-js-js'></script>
+<script type='text/javascript' id='flra-script-js-extra'>
+/* <![CDATA[ */
+var flra_array = {"MainContentW":"1140","LeftBannerW":"130","RightBannerW":"130","LeftAdjust":"20","RightAdjust":"20","TopAdjust":"50","TopAdjustScroll":"65"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/devvn-float-left-right-ads/left-right-ads/float-left-right19f6.js?ver=1.0.7' id='flra-script-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/elementor/assets/js/webpack.runtime.min9e95.js?ver=3.8.0' id='elementor-webpack-runtime-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/elementor/assets/js/frontend-modules.min9e95.js?ver=3.8.0' id='elementor-frontend-modules-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2' id='elementor-waypoints-js'></script>
+<script type='text/javascript' src='../../c0.wp.com/c/6.1.1/wp-includes/js/jquery/ui/core.min.js' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/elementor/assets/lib/swiper/swiper.min48f5.js?ver=5.3.6' id='swiper-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/elementor/assets/lib/share-link/share-link.min9e95.js?ver=3.8.0' id='share-link-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/elementor/assets/lib/dialog/dialog.mind227.js?ver=4.9.0' id='elementor-dialog-js'></script>
+<script type='text/javascript' id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},
+"version":"3.8.0","is_static":false,"experimentalFeatures":{"e_import_export":true,"e_hidden_wordpress_widgets":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true},"urls":{"assets":"https:\/\/srmnotesadda.in\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":661,"title":"Function%20and%20Constructor%20Overloading%20%E2%80%93%20SRMnotesADDA","excerpt":"","featuredImage":false}};
+</script>
+<script type='text/javascript' src='../wp-content/plugins/elementor/assets/js/frontend.min9e95.js?ver=3.8.0' id='elementor-frontend-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/elementor/assets/js/preloaded-modules.min9e95.js?ver=3.8.0' id='preloaded-modules-js'></script>
+<script type='text/javascript' src='../../c0.wp.com/c/6.1.1/wp-includes/js/underscore.min.js' id='underscore-js'></script>
+<script type='text/javascript' id='wp-util-js-extra'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../c0.wp.com/c/6.1.1/wp-includes/js/wp-util.min.js' id='wp-util-js'></script>
+<script type='text/javascript' id='wpforms-elementor-js-extra'>
+/* <![CDATA[ */
+var wpformsElementorVars = {"recaptcha_type":"v2"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/wpforms/assets/js/integrations/elementor/frontend.minf343.js?ver=1.6.2.3' id='wpforms-elementor-js'></script>
+<!--[if IE]>
+		<script type="text/javascript">
+			if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}
+		</script>
+		<![endif]-->
+<script type="text/javascript">
+			(function () {
+				var comm_par_el = document.getElementById( 'comment_parent' ),
+					comm_par = ( comm_par_el && comm_par_el.value ) ? comm_par_el.value : '',
+					frame = document.getElementById( 'jetpack_remote_comment' ),
+					tellFrameNewParent;
+
+				tellFrameNewParent = function () {
+					if ( comm_par ) {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=182630788&postid=661&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&jetpack_comments_nonce=8e1f6aacb5&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=dark&lang=en_US&jetpack_version=11.5.1&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=8ee11ec280403675e2dd3b2d939a93ab0f1e0eca#parent=https%3A%2F%2Fsrmnotesadda.in%2Ffunction-and-constructor-overloading%2F" + '&replytocom=' + parseInt( comm_par, 10 ).toString();
+					} else {
+						frame.src = "https://jetpack.wordpress.com/jetpack-comment/?blogid=182630788&amp;postid=661&amp;comment_registration=0&amp;require_name_email=1&amp;stc_enabled=1&amp;stb_enabled=1&amp;show_avatars=1&amp;avatar_default=mystery&amp;greeting=Leave+a+Reply&amp;jetpack_comments_nonce=8e1f6aacb5&amp;greeting_reply=Leave+a+Reply+to+%25s&amp;color_scheme=dark&amp;lang=en_US&amp;jetpack_version=11.5.1&amp;show_cookie_consent=10&amp;has_cookie_consent=0&amp;token_key=%3Bnormal%3B&amp;sig=8ee11ec280403675e2dd3b2d939a93ab0f1e0eca#parent=https%3A%2F%2Fsrmnotesadda.in%2Ffunction-and-constructor-overloading%2F";
+					}
+				};
+
+				
+				if ( 'undefined' !== typeof addComment ) {
+					addComment._Jetpack_moveForm = addComment.moveForm;
+
+					addComment.moveForm = function ( commId, parentId, respondId, postId ) {
+						var returnValue = addComment._Jetpack_moveForm( commId, parentId, respondId, postId ),
+							cancelClick, cancel;
+
+						if ( false === returnValue ) {
+							cancel = document.getElementById( 'cancel-comment-reply-link' );
+							cancelClick = cancel.onclick;
+							cancel.onclick = function () {
+								var cancelReturn = cancelClick.call( this );
+								if ( false !== cancelReturn ) {
+									return cancelReturn;
+								}
+
+								if ( ! comm_par ) {
+									return cancelReturn;
+								}
+
+								comm_par = 0;
+
+								tellFrameNewParent();
+
+								return cancelReturn;
+							};
+						}
+
+						if ( comm_par == parentId ) {
+							return returnValue;
+						}
+
+						comm_par = parentId;
+
+						tellFrameNewParent();
+
+						return returnValue;
+					};
+				}
+
+				
+				// Do the post message bit after the dom has loaded.
+				document.addEventListener( 'DOMContentLoaded', function () {
+					var iframe_url = "index.html\/\/jetpack.wordpress.com";
+					if ( window.postMessage ) {
+						if ( document.addEventListener ) {
+							window.addEventListener( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https:///' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https:///' ) !== origin ) {
+									return;
+								}
+								frame.style.height = event.data + 'px';
+							});
+						} else if ( document.attachEvent ) {
+							window.attachEvent( 'message', function ( event ) {
+								var origin = event.origin.replace( /^http:\/\//i, 'https:///' );
+								if ( iframe_url.replace( /^http:\/\//i, 'https:///' ) !== origin ) {
+									return;
+								}
+								frame.style.height = event.data + 'px';
+							});
+						}
+					}
+				})
+
+			})();
+		</script>
+<script src='../../stats.wp.com/e-202247.js' defer></script>
+<script>
+		_stq = window._stq || [];
+		_stq.push([ 'view', {v:'ext',blog:'182630788',post:'661',tz:'0',srv:'srmnotesadda.in',j:'1:11.5.1'} ]);
+		_stq.push([ 'clickTrackerInit', '182630788', '661' ]);
+	</script> <script type="text/javascript" id="wpsp-script-frontend"></script>
+</body>
+
+<!-- Mirrored from srmnotesadda.in/function-and-constructor-overloading/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 10:38:04 GMT -->
+</html>
